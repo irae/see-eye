@@ -5,7 +5,8 @@
     "jquery": "~1.9.1",
     "ember": "~1.0.0",
     "handlebars": "~1.0.0",
-    "ember-data-shim": "1.0.0-beta.2"
+    "ember-data-shim": "1.0.0-beta.2",
+    "ember-localstorage-adapter": "*"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.1.2"

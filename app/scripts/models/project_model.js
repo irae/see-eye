@@ -13,6 +13,11 @@ App.Project = DS.Model.extend({
 
 
 App.ProjectAdapter = DS.RESTAdapter.extend({
+  findAll: function (store, type, id) {
+    return {
+      projects: []
+    };
+  },
   find: function (store, type, id) {
     return Ember.$.ajax(id + '/api/json/');
   }

@@ -6,7 +6,9 @@
     "ember": "~1.0.0",
     "handlebars": "~1.0.0",
     "ember-data-shim": "1.0.0-beta.2",
-    "ember-localstorage-adapter": "*"
+    "ember-localstorage-adapter": "*",
+    "font-awesome": "~3.2.1",
+    "components-bootstrap": "~3.0.0"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.1.2"

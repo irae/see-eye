@@ -15,7 +15,7 @@
     "trailing": false,
     "smarttabs": true,
     "globals": {
-        "SeeEye": true,
+        "App": true,
         "jQuery": true,
         "Ember": true,
         "Handlebars": true,

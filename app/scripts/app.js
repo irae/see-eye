@@ -1,4 +1,4 @@
-var SeeEye = window.SeeEye = Ember.Application.create();
+window.App = Ember.Application.create();
 
 /* Order and include as you please. */
 require('scripts/controllers/*');

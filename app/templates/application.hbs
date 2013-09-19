@@ -1,30 +1,24 @@
-<div>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <div class="brand">
-                    Your App
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid" id="main">
-        <div class="row-fluid">
-            <div>
-                <div class="span3">
-                    <div class="well sidebar-nav">
-                        <span class="nav-header">Colors</span>
-                        <ul class="nav nav-list">
-                        {{#each item in controller}}
-                            <li>{{item}}</li>
-                        {{/each}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="span9">
-                    {{outlet}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Radiator</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="jenkins job url">
+      </div>
+      <button type="submit" class="btn btn-default"><i class="icon-plus"></i> project</button>
+    </form>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+{{ outlet }}

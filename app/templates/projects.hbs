@@ -1,12 +1,6 @@
-  <pre>
-  projects:
-  {{content}}</pre>
 {{#each project in content}}
-  <pre>
-    project: {{project.name}}
-    builds:
-    {{#each build in project.builds}}
-      {{build.number}} {{build.result}}
-    {{/each}}
-  </pre>
+<pre>
+  project: {{project.name}}
+    builds: {{#each build in project.builds}}
+      {{build.number}} {{build.result}} {{/each}}</pre>
 {{/each}}

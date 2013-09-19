@@ -2,6 +2,13 @@ App.Project = DS.Model.extend({
   name: DS.attr('string'),
   color: DS.attr('string'),
   builds: DS.hasMany('build', {async:true}),
+  sortedBuilds: function() {
+    return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+      sortProperties: ['number'],
+      content: this.get('builds'),
+      sortAscending: false,
+    });
+  }.property('builds'),
 });
 
 
@@ -19,8 +26,8 @@ App.ProjectSerializer = DS.RESTSerializer.extend({
         name: payload.name,
         color: payload.color,
         builds: payload.builds.sort(function(a, b) {
-          return a.number > b.number;
-        }).slice(0, 4).map(function(b) {
+          return b.number - a.number;
+        }).slice(0, 15).map(function(b) {
           return b.url;
         })
       },

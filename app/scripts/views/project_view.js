@@ -12,6 +12,7 @@ App.BuildView = Ember.View.extend({
   tagName: 'a',
   classNames: ['build'],
   classNameBindings: ['statusClassName'],
+  attributeBindings: ['build.url:href'],
   statusClassName: function() {
     var result = this.get('build.result');
     return (result||"pending").toLowerCase();

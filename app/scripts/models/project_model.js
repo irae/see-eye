@@ -67,6 +67,12 @@ App.ProjectSerializer = DS.RESTSerializer.extend({
       },
     };
     saveStorage(payload.url);
+    var upstream = (payload.upstreamProjects && payload.upstreamProjects.length && payload.upstreamProjects) || [];
+    var downstream = (payload.downstreamProjects && payload.downstreamProjects.length && payload.downstreamProjects) || [];
+    var relatedProjects = downstream.concat(upstream);
+    relatedProjects.forEach(function(related) {
+      store.find('project', related.url);
+    });
     return this._super(store, type, new_payload, id, requestType);
   }
 });

@@ -22,8 +22,5 @@
 </nav>
 
 {{#each project in arrangedContent}}
-<pre>
-  project: {{project.name}} {{project.lastBuildDate}}
-    builds: {{#each build in project.sortedBuilds}}
-      {{build.number}} {{build.result}} {{build.timestamp}} {{/each}}</pre>
+  {{ view App.ProjectView projectBinding=project}}
 {{/each}}

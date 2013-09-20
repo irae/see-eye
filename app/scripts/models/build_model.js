@@ -2,6 +2,7 @@ App.Build = DS.Model.extend({
   project: DS.belongsTo('project'),
   number: DS.attr('string'),
   result: DS.attr('string'),
+  url: DS.attr('string'),
   timestamp: DS.attr('number'),
 });
 
@@ -27,6 +28,7 @@ App.BuildSerializer = DS.RESTSerializer.extend({
         number: payload.number,
         result: payload.result,
         timestamp: payload.timestamp,
+        url: payload.url,
       },
     };
     return this._super(store, type, new_payload, id, requestType);
@@ -38,6 +40,7 @@ App.BuildSerializer = DS.RESTSerializer.extend({
         number: payload.number,
         result: payload.result,
         timestamp: payload.timestamp,
+        url: payload.url,
       }],
     };
     return this._super(store, type, new_payload, id, requestType);

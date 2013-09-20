@@ -2,3 +2,50 @@
 html, body {
     margin: 30px 0;
 }
+
+.project {
+  margin: 10px;
+  background-color:silver;
+  width: 410px;
+  height:100px;
+  float: left;
+  padding:10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.buildWrapper {
+  position: absolute;
+  bottom:0;
+  left:0;
+  height:50px;
+  width:100%;
+  overflow: hidden;
+}
+
+.build {
+  overflow: hidden;
+  display: block;
+  margin: 0 0 15px 10px;
+  width: 40px;
+  height: 40px;
+  float: left;
+  text-align: center;
+  color: black;
+  box-sizing: borde-box;
+  padding-top: 8px;
+  background-color: gray;
+  border: 1px solid white;
+}
+
+.project.failure {
+  height: 400px;
+}
+.project.success, .build.success {
+  background: green;
+}
+
+.project.failure, .build.failure {
+  background: red;
+}
+

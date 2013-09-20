@@ -21,9 +21,9 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 
-{{#each project in content}}
+{{#each project in arrangedContent}}
 <pre>
-  project: {{project.name}}
-    builds: {{#each build in project.builds}}
-      {{build.number}} {{build.result}} {{/each}}</pre>
+  project: {{project.name}} {{project.lastBuildDate}}
+    builds: {{#each build in project.sortedBuilds}}
+      {{build.number}} {{build.result}} {{build.timestamp}} {{/each}}</pre>
 {{/each}}

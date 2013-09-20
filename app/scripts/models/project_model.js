@@ -4,11 +4,14 @@ App.Project = DS.Model.extend({
   builds: DS.hasMany('build', {async:true}),
   sortedBuilds: function() {
     return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
-      sortProperties: ['number'],
+      sortProperties: ['timestamp'],
       content: this.get('builds'),
       sortAscending: false,
     });
-  }.property('builds'),
+  }.property('builds.@each.timestamp'),
+  lastBuildDate: function() {
+    return this.get('sortedBuilds.firstObject.timestamp') || 0;
+  }.property('builds.@each.timestamp'),
 });
 
 var projectStorage;
@@ -38,12 +41,16 @@ if(!projectStorage) {
 
 App.ProjectAdapter = DS.RESTAdapter.extend({
   findAll: function (store, type, id) {
+    var arrayProjects = projectStorage.projects.map(function(url) {
+      var project = store.createRecord('project', { id: url });
+      project.reload();
+      return project;
+    });
+    var sortable = Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+      content: arrayProjects
+    });
     return {
-      projects: projectStorage.projects.map(function(url) {
-        var project = store.createRecord('project', { id: url });
-        project.reload();
-        return project;
-      })
+      projects: sortable
     };
   },
   find: function (store, type, id) {

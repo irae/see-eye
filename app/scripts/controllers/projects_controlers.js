@@ -1,4 +1,7 @@
 App.ProjectsController = Ember.ArrayController.extend({
+  sortProperties: ['lastBuildDate'],
+  sortAscending: false,
+
   projectUrl: null,
   actions: {
     addProject: function() {

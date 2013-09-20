@@ -6,6 +6,9 @@ App.Build = DS.Model.extend({
 });
 
 App.BuildAdapter = DS.RESTAdapter.extend({
+  find: function (store, type, id) {
+    return Ember.$.ajax(id + '/api/json/');
+  },
   findQuery: function (store, type, query) {
     return Ember.$.ajax(query.id + '/api/json/');
   },
@@ -17,6 +20,17 @@ App.BuildAdapter = DS.RESTAdapter.extend({
 });
 
 App.BuildSerializer = DS.RESTSerializer.extend({
+  extractSingle: function(store, type, payload, id, requestType) {
+    var new_payload = {
+      build: {
+        id: payload.url,
+        number: payload.number,
+        result: payload.result,
+        timestamp: payload.timestamp,
+      },
+    };
+    return this._super(store, type, new_payload, id, requestType);
+  },
   extractArray: function(store, type, payload, id, requestType) {
     var new_payload = {
       builds: [{

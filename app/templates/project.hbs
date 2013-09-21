@@ -1,7 +1,14 @@
 
 <h4>{{project.name}}</h4>
 {{#if project.sortedBuilds.firstObject.isFailure}}
-  <pre>{{project.sortedBuilds.firstObject.logs.firstObject.logText}}</pre>
+
+  <div class="taskWrapper">
+    {{#each part in project.sortedBuilds.firstObject.logs.firstObject.logParts}}
+      {{#view Ember.View class="task" classNameBindings="part.status"}}
+        {{part.name}}
+      {{/view}}
+    {{/each}}
+  </div>
 {{/if}}
 <div class="clearfix buildWrapper">
   {{#each build in project.builds}}

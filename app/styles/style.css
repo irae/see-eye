@@ -22,6 +22,7 @@ html, body {
 }
 
 .buildWrapper {
+  color: black;
   position: absolute;
   bottom:0;
   left:0;
@@ -45,14 +46,26 @@ html, body {
   border: 1px solid white;
 }
 
+.taskWrapper {
+  color: black;
+  background: silver;
+  padding:5px;
+}
+
+.task {
+  background: silver;
+  padding: 5px;
+}
+
 .project.failure {
   height: 400px;
 }
-.project.success, .build.success {
-  background: green;
+.project.success, .build.success, .task.success {
+  background-color: lightgreen;
 }
 
-.project.failure, .build.failure {
-  background: red;
+.project.failure, .build.failure, .task.failure {
+  background: darkred;
+  color: white;
 }
 

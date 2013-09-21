@@ -35,7 +35,6 @@ App.BuildAdapter = DS.RESTAdapter.extend({
           logText : data,
         }],
       };
-      console.log(payload);
       return payload;
     });
   },

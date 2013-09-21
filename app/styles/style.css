@@ -13,6 +13,10 @@ html, body {
   box-sizing: border-box;
   position: relative;
 }
+.project pre {
+  height: 290px;
+  overflow: auto;
+}
 
 .buildWrapper {
   position: absolute;

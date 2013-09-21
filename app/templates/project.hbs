@@ -1,5 +1,8 @@
 
 <h4>{{project.name}}</h4>
+{{#if project.sortedBuilds.firstObject.isFailure}}
+  <pre>{{project.sortedBuilds.firstObject.logs.firstObject.logText}}</pre>
+{{/if}}
 <div class="clearfix buildWrapper">
   {{#each build in project.builds}}
     {{#view App.BuildView buildBinding=build }}

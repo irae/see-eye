@@ -69,7 +69,7 @@ App.ProjectSerializer = DS.RESTSerializer.extend({
         builds: payload.builds.sort(function(a, b) {
           return b.number - a.number;
         }).slice(0, 15).map(function(b) {
-          return b.url;
+          return b.url.replace(/\/$/, '');
         })
       },
     };

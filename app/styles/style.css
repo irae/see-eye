@@ -15,7 +15,10 @@ html, body {
 }
 .project pre {
   height: 290px;
-  overflow: auto;
+  overflow: scroll;
+  white-space: pre;
+  word-wrap: normal;
+  word-break: normal;
 }
 
 .buildWrapper {

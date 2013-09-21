@@ -1,7 +1,9 @@
 {
   "name": "see-eye",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "bouncy": "~3.2.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
@@ -28,7 +30,7 @@
     "grunt-connect-proxy": "~0.1.5"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   },
   "description": "A dinamic view to jenkins APIs, made with emberjs",
   "main": "index.js",

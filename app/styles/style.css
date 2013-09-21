@@ -6,15 +6,14 @@ html, body {
 .project {
   margin: 10px;
   background-color:silver;
-  width: 410px;
-  height:100px;
+  width: 340px;
   float: left;
-  padding:10px;
+  padding:10px 10px 110px 10px;
   box-sizing: border-box;
   position: relative;
 }
+
 .project pre {
-  height: 290px;
   overflow: scroll;
   white-space: pre;
   word-wrap: normal;
@@ -26,7 +25,6 @@ html, body {
   position: absolute;
   bottom:0;
   left:0;
-  height:50px;
   width:100%;
   overflow: hidden;
 }
@@ -34,14 +32,13 @@ html, body {
 .build {
   overflow: hidden;
   display: block;
-  margin: 0 0 15px 10px;
-  width: 40px;
-  height: 40px;
+  margin: 0 0 10px 10px;
+  width: 45px;
+  height: 22px;
   float: left;
   text-align: center;
   color: black;
   box-sizing: borde-box;
-  padding-top: 8px;
   background-color: gray;
   border: 1px solid white;
 }
@@ -57,9 +54,6 @@ html, body {
   padding: 5px;
 }
 
-.project.failure {
-  height: 400px;
-}
 .project.success, .build.success, .task.success {
   background-color: lightgreen;
 }

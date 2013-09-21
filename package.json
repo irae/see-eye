@@ -1,6 +1,6 @@
 {
   "name": "see-eye",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -24,9 +24,20 @@
     "connect-livereload": "~0.2.0",
     "grunt-ember-templates": "~0.4.14",
     "time-grunt": "~0.1.1",
-    "grunt-neuter": "~0.5.0"
+    "grunt-neuter": "~0.5.0",
+    "grunt-connect-proxy": "~0.1.5"
   },
   "engines": {
     "node": ">=0.8.0"
-  }
+  },
+  "description": "A dinamic view to jenkins APIs, made with emberjs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Irae <irae@irae.pro.br>",
+  "license": "MIT"
 }
